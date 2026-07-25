@@ -41,6 +41,7 @@ Safety
 - Zero rules configured = zero behavior change.
 """,
     'depends': ['base'],
+    'images': ['static/description/banner.png'],
     'data': [
         'security/ir.model.access.csv',
         'views/auto_archive_rule_views.xml',

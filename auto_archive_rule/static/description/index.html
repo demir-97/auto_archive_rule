@@ -1,0 +1,53 @@
+<section style="max-width: 900px; margin: 0 auto; padding: 32px 16px; font-family: Arial, Helvetica, sans-serif; color: #333;">
+    <!-- apps.odoo.com strips background/gradient styles but keeps text colors:
+         every text color here must stay readable on a plain white page. -->
+    <div style="text-align: center; padding: 40px 24px; background-color: #f6f1f5; border: 1px solid #e4d9e1; border-radius: 12px;">
+        <h1 style="margin: 0 0 12px; font-size: 32px; color: #5E3C58;">Auto-Archive Rules &mdash; No-Code Cleanup for Inactive Records</h1>
+        <p style="margin: 0; font-size: 18px; color: #555;">Old leads, stale draft quotations, ancient log-like records piling up in every list view &mdash; this module archives them for you, automatically.</p>
+        <div style="display:flex; justify-content:center; gap:10px; margin-top:18px; flex-wrap:wrap;">
+        <span style="display:inline-block; background:#EAF5EC; color:#1F7A54; border:1px solid #BCDFC6; border-radius:20px; padding:6px 16px; font-size:13px; font-weight:600;">✓ Odoo 17.0</span><span style="display:inline-block; background:#EAF5EC; color:#1F7A54; border:1px solid #BCDFC6; border-radius:20px; padding:6px 16px; font-size:13px; font-weight:600;">✓ Odoo 18.0</span><span style="display:inline-block; background:#EAF5EC; color:#1F7A54; border:1px solid #BCDFC6; border-radius:20px; padding:6px 16px; font-size:13px; font-weight:600;">✓ Odoo 19.0</span>
+    </div>
+    </div>
+
+
+    <div style="margin-top: 32px;">
+        <h2 style="color: #875A7B; font-size: 24px;">How it works</h2>
+        <ol style="font-size: 15px; line-height: 1.9; padding-left: 20px; margin-bottom: 0;"><li>Go to <b>Settings &rsaquo; Technical &rsaquo; Auto-Archive Rules</b>.</li><li>Create a rule: pick a model and how many days of inactivity should trigger archiving. Save.</li><li>A daily scheduled action archives matching records from then on &mdash; or click <b>Run Now</b> to test it immediately.</li></ol>
+    </div>
+
+    <div style="margin-top: 32px;">
+        <h2 style="color: #875A7B; font-size: 24px;">Options per rule</h2>
+        <ul style="font-size: 15px; line-height: 1.9; padding-left: 20px; margin-bottom: 0;"><li><b>Based on date field</b> &mdash; which date/datetime field counts as "last activity". Leave empty to use the record's own last-modified date.</li><li><b>Extra filter</b> &mdash; an optional additional domain, e.g. only archive records matching <code>[('stage_id.is_won', '=', False)]</code>.</li><li><b>Run Now</b> &mdash; trigger a rule immediately instead of waiting for the daily cron, useful to test a rule before trusting it.</li><li>Each rule remembers when it last ran and how many records it archived.</li></ul>
+    </div>
+
+    <div style="margin-top: 32px;">
+        <h2 style="color: #875A7B; font-size: 24px;">Safety</h2>
+        <ul style="font-size: 15px; line-height: 1.9; padding-left: 20px; margin-bottom: 0;"><li>Only models with an "Active" field can be targeted &mdash; Odoo itself stops you from picking a model without one.</li><li>Archiving, not deleting: every affected record is one click away from being restored.</li><li>Zero rules configured = zero behavior change.</li></ul>
+    </div>
+
+
+    <div style="margin-top: 32px;">
+        <h2 style="color: #875A7B; font-size: 24px;">Frequently asked questions</h2>
+        
+        <div style="margin-bottom:18px;">
+            <div style="font-size:15px; font-weight:700; color:#5E3C58; margin-bottom:4px;">Can archived records be restored?</div>
+            <div style="font-size:15px; line-height:1.6; color:#444;">Yes, one click — archiving only sets the Active field to False. Nothing is deleted.</div>
+        </div>
+        <div style="margin-bottom:18px;">
+            <div style="font-size:15px; font-weight:700; color:#5E3C58; margin-bottom:4px;">What if the model I want has no Active field?</div>
+            <div style="font-size:15px; line-height:1.6; color:#444;">You can't select it — an explicit check stops you from picking a model without one, the same rule Odoo itself relies on for archiving anywhere.</div>
+        </div>
+        <div style="margin-bottom:18px;">
+            <div style="font-size:15px; font-weight:700; color:#5E3C58; margin-bottom:4px;">Do I have to wait for the daily cron to test a rule?</div>
+            <div style="font-size:15px; line-height:1.6; color:#444;">No — every rule has a Run Now button that triggers it immediately, so you can check the result before trusting it to run unattended.</div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center; padding: 24px; background: #f6f2f5; border-radius: 12px;">
+        <h2 style="color: #875A7B; font-size: 22px; margin-top: 0;">Support</h2>
+        <p style="font-size: 15px; margin-bottom: 0;">
+            Questions, bug reports or feature requests:
+            <a href="mailto:meisanqo@outlook.com" style="color: #875A7B;"><b>meisanqo@outlook.com</b></a>
+        </p>
+    </div>
+</section>

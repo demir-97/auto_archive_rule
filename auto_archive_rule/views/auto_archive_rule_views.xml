@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_auto_archive_rule_list" model="ir.ui.view">
+        <field name="name">auto_archive.rule.list</field>
+        <field name="model">auto_archive.rule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="model_id"/>
+                <field name="days"/>
+                <field name="date_field_id"/>
+                <field name="last_run"/>
+                <field name="last_run_count"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_auto_archive_rule_form" model="ir.ui.view">
+        <field name="name">auto_archive.rule.form</field>
+        <field name="model">auto_archive.rule</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_run_now" string="Run Now" type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="model_id"/>
+                            <field name="days"/>
+                            <field name="date_field_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="extra_domain" placeholder="[('state', '=', 'done')]"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="last_run"/>
+                            <field name="last_run_count"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_auto_archive_rule" model="ir.actions.act_window">
+        <field name="name">Auto-Archive Rules</field>
+        <field name="res_model">auto_archive.rule</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'active_test': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first auto-archive rule</p>
+            <p>Pick a model and an inactivity period: matching records are archived automatically every day.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_auto_archive_rule"
+              name="Auto-Archive Rules"
+              parent="base.next_id_2"
+              action="action_auto_archive_rule"
+              groups="base.group_system"
+              sequence="62"/>
+
+</odoo>

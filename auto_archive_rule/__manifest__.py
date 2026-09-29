@@ -50,6 +50,4 @@ Safety
     'installable': True,
     'application': False,
     'license': 'OPL-1',
-    'price': 10.0,
-    'currency': 'USD',
 }

@@ -1,0 +1,2 @@
+id,name,model_id,group_id/id,operation,domain
+access_auto_archive_rule_system,auto_archive.rule.system,auto_archive.rule,base.group_system,crud,

@@ -1,10 +1,10 @@
 {
     'name': 'Auto-Archive Rules | No-Code Cleanup for Inactive Records',
-    'version': '18.0.1.0.0',
+    'version': '18.0.1.0.1',
     'category': 'Productivity',
     'author': 'Meisanqo',
     'support': 'meisanqo@outlook.com',
-    'summary': 'Auto-archive inactive records on any model — no code, from Settings.',
+    'summary': "Auto archive old records on any model: set how many days of inactivity count as stale and a daily scheduled action runs a bulk archive of everything that matches. Automatically archive inactive leads, old draft quotations, stale logs and any other model with an Active field, narrowed further by an optional domain filter. Hands-off data cleanup that archives rather than deletes: every record stays one click from restore. No code, no developer: the rules live in Settings, and zero rules means zero change.",
     'description': """
 Auto-Archive Rules
 =====================
